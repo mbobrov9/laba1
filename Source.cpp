@@ -47,7 +47,7 @@ void STUDENT::show()
 			cout << "progress:" << progress[i] << endl;
 	}
 }
-void STUDENT::showdebtor()
+int STUDENT::showdebtor()
 {
 	int flag = 0;
 	for (int i = 0; i < 5; i++)
@@ -55,9 +55,16 @@ void STUDENT::showdebtor()
 		if (progress[i] == 2)
 			flag = 1;
 	}
-	if (flag==1)
-	cout << "Name of the STUDENT:" << Name << endl;
-	cout << "Name of the Group:" << Group << endl;
+	if (flag == 1)
+	{
+		cout << "Name of the STUDENT:" << Name << endl;
+		cout << "Name of the Group:" << Group << endl;
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
 }
 char STUDENT::alfavit()
 {
