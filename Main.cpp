@@ -24,7 +24,7 @@ int main()
 			second = C[j]->alfavit();
 			if (first > second)
 			{
-				STUDENT * X = C[j - 1];
+				STUDENT *X = new STUDENT(C[j - 1]);
 				C[j - 1] = C[j];
 				C[j] = X;
 			}
