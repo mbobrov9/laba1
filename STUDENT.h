@@ -19,6 +19,6 @@ public:
 	STUDENT(const STUDENT*);
 	~STUDENT();
 	void show();
-	int showdebtor();
-	char alfavit();
+	int searchdebtor();
+	string alfavit();
 }; 
