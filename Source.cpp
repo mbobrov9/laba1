@@ -47,7 +47,7 @@ void STUDENT::show()
 			cout << "progress:" << progress[i] << endl;
 	}
 }
-int STUDENT::showdebtor()
+int STUDENT::searchdebtor()
 {
 	int flag = 0;
 	for (int i = 0; i < 5; i++)
@@ -57,8 +57,6 @@ int STUDENT::showdebtor()
 	}
 	if (flag == 1)
 	{
-		cout << "Name of the STUDENT:" << Name << endl;
-		cout << "Name of the Group:" << Group << endl;
 		return 1;
 	}
 	else
@@ -66,8 +64,7 @@ int STUDENT::showdebtor()
 		return 0;
 	}
 }
-char STUDENT::alfavit()
+string STUDENT::alfavit()
 {
-	char first = Name[0];
-	return first;
+	return Name;
 }
