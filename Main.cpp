@@ -5,31 +5,15 @@
 #include <string>
 #include <malloc.h>
 #include "STUDENT.h"
+#include "journal.h"
 using namespace std;
 
 int main()
 {
 	
-	char first, second;
-	int i, size;
-	cin >> size;
-	STUDENT **C = new STUDENT*[size];
-	for (int i = 0; i < size; i++)
-		C[i] = new STUDENT;
-	for (int i = 0; i < size-1; i++)
-	{
-		for (int j = (size - 1); j > i; j--)
-		{
-			first = C[j-1]->alfavit();
-			second = C[j]->alfavit();
-			if (first > second)
-			{
-				STUDENT *X = new STUDENT(C[j - 1]);
-				C[j - 1] = C[j];
-				C[j] = X;
-			}
-		}
-	}
+	journal J;
+
+	J.sort();
 	cout << " 1 - show STUDENTS\n 2 - show debtors \n Press 3 to exit" << endl;
 	while (true)
 	{
@@ -37,21 +21,12 @@ int main()
 		switch (getchar())
 		{
 		case '1':
-			for (int i = 0; i < size; i++)
-				C[i]->show();
+			
+		     J.showjournal();
 			
 			break;
 		case '2':
-			for (int i = 0; i < size; i++)
-			{
-				flag2=C[i]->showdebtor();
-				if (flag2 == 1)
-					flag1 = 1;
-			}
-			if (flag1==0)
-			{
-				cout << "no debtor here" << endl;
-			}
+			 J.showdebtor();
 			break;
 
 		case '3':
