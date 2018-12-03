@@ -11,7 +11,7 @@ private:
 	STUDENT** Data;
 	int size;
 public:
-	journal();
+	
 	~journal();
 	journal(journal C, int value);
 	journal(int value);
