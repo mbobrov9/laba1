@@ -6,17 +6,12 @@
 #include "journal.h"
 
 using namespace std;
-journal::journal()
-{
-	cout << "Container Ctor" << endl;
-	cin>>size;
-	Data = new STUDENT*[size];
-	for (int i = 0; i < size; i++)
-		Data[i] = new STUDENT;
-}
 journal:: ~journal() {
 	cout << "dtor journal" << endl;
-	delete[] Data;
+	for (int i = 0; i < size; i++)
+	{
+		delete[] Data[i];
+	}
 }
 
 journal::journal(journal C, int value)
@@ -33,8 +28,12 @@ journal::journal(int value)
 	cout << "ctor with param value" << endl;
 	size = value;
 	Data = new STUDENT*[size];
+	for (int i = 0; i < size; i++)
+	{
+		Data[i] = new STUDENT;
+		Data[i]->fullin();
+	}
 }
-
 void journal::showjournal()
 {
 	for (int i = 0; i < this->size; i++)
